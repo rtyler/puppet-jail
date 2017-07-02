@@ -3,7 +3,6 @@ require 'tempfile'
 Puppet::Type.type(:jail).provide(:iocage_legacy) do
   desc 'Manage jails using iocage(8)'
   confine    kernel: :freebsd
-  defaultfor kernel: :freebsd
 
   commands iocage: '/usr/local/sbin/iocage'
 
