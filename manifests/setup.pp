@@ -5,8 +5,9 @@
 #
 class jail::setup () {
 
-  package { 'iocage':
+  package { 'py36-iocage':
     ensure => installed,
+    name   => 'iocage',
   }
 
   service { 'iocage':
