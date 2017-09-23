@@ -7,7 +7,6 @@ class jail::setup () {
 
   package { 'py36-iocage':
     ensure => installed,
-    name   => 'iocage',
   }
 
   service { 'iocage':
@@ -19,5 +18,5 @@ class jail::setup () {
   }
 
   File['/etc/jail.conf'] ~> Service['iocage']
-  Package['iocage'] ~> Service['iocage']
+  Package['py36-iocage'] ~> Service['iocage']
 }
